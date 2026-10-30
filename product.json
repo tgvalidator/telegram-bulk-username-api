@@ -1,8 +1,8 @@
 {
-  "name": "Telegram Bulk Username Check",
+  "name": "Telegram bulk username check",
   "brand": "TG Validator",
   "repository": "tgvalidator/telegram-bulk-username-api",
-  "description": "Upload a list of Telegram usernames, confirm which ones belong to real accounts, and get the avatar URL.",
+  "description": "Check Telegram account registration for an authorized list of usernames.",
   "official_site": "https://tgvalidator.com",
   "landing_page": "https://tgvalidator.com/products/tg_username_batch",
   "canonical_docs": "https://tgvalidator.com/api-docs",
@@ -31,7 +31,7 @@
   },
   "limits": {
     "min_items": 1000,
-    "max_items": 100000,
+    "max_items": 500000,
     "poll_interval_seconds": 30,
     "file_formats": [
       "txt",
@@ -40,19 +40,14 @@
   },
   "result_fields": [
     {
-      "name": "username",
+      "name": "identifier",
       "example": "alex_kim",
-      "description": "The submitted username (without @)."
+      "description": "Submitted identifier, used to join the result to the input. Phone identifiers include their country code."
     },
     {
       "name": "activated",
-      "example": "yes",
-      "description": "Whether the username belongs to an existing Telegram account."
-    },
-    {
-      "name": "avatar_url",
-      "example": "<image url>",
-      "description": "Avatar URL, empty when the account has none."
+      "example": "true",
+      "description": "The determined positive/negative signal for this product; interpret it in the product context."
     }
   ],
   "statuses": [
@@ -63,5 +58,5 @@
   "pricing_url": "https://tgvalidator.com/pricing",
   "maintainer": "TG Validator",
   "license": "MIT",
-  "last_reviewed": "2026-09-22"
+  "last_reviewed": "2026-10-30"
 }
